@@ -673,12 +673,16 @@ html {
     flex-direction: column;
   }
 
+  .slide-content-info-single img{
+    width: 30px;
+  }
+
   .slide-title h1 {
-    font-size: 40px;
+    font-size: 25px;
   }
   
   .slide-title h3 {
-    font-size: 16px;
+    font-size: 10px;
   }
 
   .slide-content-chart {
@@ -686,7 +690,8 @@ html {
   }
   
   .slide-content-chart h1{
-    font-size: 1em;
+    font-size: 14px;
+    padding: 0;
   }
 
   .slide-content-info-single h1 {
