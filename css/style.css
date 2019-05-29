@@ -326,14 +326,14 @@ html {
   .navigation {
     writing-mode: vertical-lr;
     text-orientation: mixed;
-    line-height: 16px;
-    font-size: 16px;
+    line-height: 10px;
+    font-size: 10px;
   }
 }
 /*** SECTIONS ***/
 .slide {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   display: block;
 }
 
@@ -678,11 +678,11 @@ html {
   }
 
   .slide-title h1 {
-    font-size: 25px;
+    font-size: 20px;
   }
   
   .slide-title h3 {
-    font-size: 10px;
+    font-size: 8px;
   }
 
   .slide-content-chart {
@@ -690,19 +690,23 @@ html {
   }
   
   .slide-content-chart h1{
-    font-size: 14px;
+    font-size: 10px;
     padding: 0;
   }
 
   .slide-content-info-single h1 {
-    font-size: 14px;
+    font-size: 12px;
   }
   
   .slide-content-info-single h1 span {
-    font-size: 10px;
+    font-size: 8px;
+  }
+
+  .slide-content-info-single img{
+    width: 20px;
   }
 
   .slide-content-info {
-    line-height: 2em;
+    line-height: 1em;
   }
 }
