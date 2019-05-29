@@ -9,6 +9,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
@@ -16,6 +17,7 @@
 
   </head>
   <body>
+		<audio autoplay loop src="interstellar.mp3" preload></audio>
     <div class="container" id="container">
 		<div class="header-title lading-page-title">
 				<svg version="1.1" id="Warstwa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -246,141 +248,430 @@
         </div>
         <div class="hero-image"/>
       </div>
-      <div class="navigation-container">
-        <div class="progress-bar"></div>
-        <ul class="navigation" style="display: block;">
-          <li id="scroll-slide1">Intro</li>
-          <li id="scroll-slide2">Słońce</li>
-          <li id="scroll-slide3">Merkury</li>
-          <li id="scroll-slide4">Wenus</li>
-          <li id="scroll-slide5">Ziema</li>
-          <li id="scroll-slide6">Mars</li>
-          <li id="scroll-slide7">Jowisz</li>
-          <li id="scroll-slide8">Saturn</li>
-          <li id="scroll-slide9">Uran</li>
-          <li id="scroll-slide10">Neptun</li>
-        </ul>
-      </div>
     </div>
     <section class="slide" id="slide1">
-			<div class="planets-background slide1" />
-      <div data-aos="fade-down" data-aos-duration="2000" class="slide-content">
-        <div class="header-title">
-          <h1>Słońce</h1>
-        </div>
-        <p class="slide-info">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-        </p>
-      </div>
+		<div class="planets-background slide1" />
+		  <div data-aos="fade-down" data-aos-duration="2000" class="slide-content">
+			<div class="slide-title">
+				<h1>Słońce</h1>
+				<h3>Serce Układu Słonecznego, jest żółtym karłem. Jego pole grawitacyjne utrzymuje porządek w naszym układzie.</h3>
+			</div>
+			<div class="slide-content-desc">
+				<div class="slide-content-info">
+					<div class="slide-content-info-single">
+						<img src="img/circular-line-with-word-age-in-the-center.svg"/>
+						<h1>Wiek: <span>~4.603 mld lat</span></h1>
+					</div>
+					<div class="slide-content-info-single">
+						<img src="img/pi.svg"/>
+						<h1>Obwód: <span>4,370,005.6 km</span></h1>
+					</div>
+					<div class="slide-content-info-single">
+						<img src="img/cylinder.svg"/>
+						<h1>Objętość: <span>1,409,272,569,059,860,000 km3</span></h1>
+					</div>
+					<div class="slide-content-info-single">
+						<img src="img/kilograms.svg"/>
+						<h1>Masa: <span>1,989 E30 kg</span></h1>
+					</div>
+					<div class="slide-content-info-single">
+						<img src="img/surface.svg"/>
+						<h1>Powierzchnia: <span>6,078,747,774,547 km2</span></h1>
+					</div>
+					<div class="slide-content-info-single">
+						<img src="img/space.svg"/>
+						<h1>Grawitacja: <span>274.0 m/s2</span></h1>
+					</div>
+					<div class="slide-content-info-single">
+						<img src="img/speedometer.svg"/>
+						<h1>Prędkość ucieczki: <span>2,223,720 km/h</span></h1>
+					</div>
+				</div>
+				<div class="slide-content-chart">
+					<h1>Skład atmosfery</h1>
+					<canvas id="sun-chart"></canvas>
+				</div>	
+			</div>
+		  </div>
     </section>
     <section class="slide" id="slide2">
-			<div class="planets-background slide2" />
-      <div data-aos="fade-down" data-aos-duration="2000" class="slide-content">
-        <div class="header-title">
-          <h1>Merkury</h1>
-        </div>
-        <p class="slide-info">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-        </p>
-      </div>
+		<div class="planets-background slide2" />
+		<div data-aos="fade-down" data-aos-duration="2000" class="slide-content">
+				<div class="slide-title">
+					<h1>Merkury</h1>
+					<h3>Najmniejsza planeta w Układzie Słonecznym, znajdująca się najbliżej Słońca. Merkury jest tylko trochę większy od Ziemskiego księzyca.</h3>
+				</div>
+				<div class="slide-content-desc">
+					<div class="slide-content-chart">
+						<h1>Skład atmosfery</h1>
+						<canvas id="mercury-chart"></canvas>
+					</div>
+					<div class="slide-content-info">
+						<div class="slide-content-info-single">
+							<img src="img/circular-line-with-word-age-in-the-center.svg"/>
+							<h1>Wiek: <span>~4.5 mld lat</span></h1>
+						</div>
+						<div class="slide-content-info-single">
+							<img src="img/pi.svg"/>
+							<h1>Obwód: <span>15,329.1 km</span></h1>
+						</div>
+						<div class="slide-content-info-single">
+							<img src="img/cylinder.svg"/>
+							<h1>Objętość: <span>60,827,208,742 km3</span></h1>
+						</div>
+						<div class="slide-content-info-single">
+							<img src="img/kilograms.svg"/>
+							<h1>Masa: <span>3,285 E23 kg</span></h1>
+						</div>
+						<div class="slide-content-info-single">
+							<img src="img/surface.svg"/>
+							<h1>Powierzchnia: <span>74,797,000 km2</span></h1>
+						</div>
+						<div class="slide-content-info-single">
+							<img src="img/space.svg"/>
+							<h1>Grawitacja: <span>3.7 m/s2</span></h1>
+						</div>
+						<div class="slide-content-info-single">
+							<img src="img/speedometer.svg"/>
+							<h1>Prędkość ucieczki: <span>15,300 km/h</span></h1>
+						</div>
+					</div>		
+				</div>
+				</div>
     </section>
     <section class="slide" id="slide3">
 			<div class="planets-background slide3" />
-      <div data-aos="fade-down" data-aos-duration="2000" class="slide-content">
-        <div class="header-title">
-          <h1>Wenus</h1>
-        </div>
-        <p class="slide-info">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-        </p>
-      </div>
+			<div data-aos="fade-down" data-aos-duration="2000" class="slide-content">
+					<div class="slide-title">
+						<h1>Wenus</h1>
+						<h3>Jest trzecim pod względem jasności ciałem niebieskim widocznym na niebie, po Słońcu i Księzycu.</h3>
+					</div>
+					<div class="slide-content-desc">
+						<div class="slide-content-info">
+							<div class="slide-content-info-single">
+								<img src="img/circular-line-with-word-age-in-the-center.svg"/>
+								<h1>Wiek: <span>~4.6 mld lat</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/pi.svg"/>
+								<h1>Obwód: <span>38,024.6 km</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/cylinder.svg"/>
+								<h1>Objętość: <span>928,415,345,893 km3</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/kilograms.svg"/>
+								<h1>Masa: <span>4,867 E24 kg</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/surface.svg"/>
+								<h1>Powierzchnia: <span>460,234,317 km2</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/space.svg"/>
+								<h1>Grawitacja: <span>8.87 m/s2</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/speedometer.svg"/>
+								<h1>Prędkość ucieczki: <span>37,296 km/h</span></h1>
+							</div>
+						</div>
+						<div class="slide-content-chart">
+							<h1>Skład atmosfery</h1>
+							<canvas id="venus-chart"></canvas>
+						</div>	
+					</div>
+					</div>
     </section>
     <section class="slide" id="slide4">
 			<div class="planets-background slide4" />
-      <div data-aos="fade-down" data-aos-duration="2000" class="slide-content">
-        <div class="header-title">
-          <h1>Ziema</h1>
-        </div>
-        <p class="slide-info">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-        </p>
-      </div>
+			<div data-aos="fade-down" data-aos-duration="2000" class="slide-content">
+					<div class="slide-title">
+						<h1>Ziemia</h1>
+						<h3>Jedyna znana plenta we Wszechświecie, na której występuje życie. Największa z planet skalistych w Układzie Słonecznym.</h3>
+					</div>
+					<div class="slide-content-desc">
+						<div class="slide-content-chart">
+							<h1>Skład atmosfery</h1>
+							<canvas id="earth-chart"></canvas>
+						</div>
+						<div class="slide-content-info">
+							<div class="slide-content-info-single">
+								<img src="img/circular-line-with-word-age-in-the-center.svg"/>
+								<h1>Wiek: <span>~4,543 mld lat</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/pi.svg"/>
+								<h1>Obwód: <span>40,030.2 km</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/cylinder.svg"/>
+								<h1>Objętość: <span>1,083,206,916,846 km3</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/kilograms.svg"/>
+								<h1>Masa: <span>5,972 E24 kg</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/surface.svg"/>
+								<h1>Powierzchnia: <span>510,064,472 km2</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/space.svg"/>
+								<h1>Grawitacja: <span>9.80665 m/s2</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/speedometer.svg"/>
+								<h1>Prędkość ucieczki: <span>40,284 km/h</span></h1>
+							</div>
+						</div>		
+					</div>
+					</div>
     </section>
     <section class="slide" id="slide5">
 			<div class="planets-background slide5" />
       <div data-aos="fade-down" data-aos-duration="2000" class="slide-content">
-        <div class="header-title">
-          <h1>Mars</h1>
-        </div>
-        <p class="slide-info">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-        </p>
-      </div>
+					<div class="slide-title">
+						<h1>Mars</h1>
+						<h3>Cel kolejnych wypraw kosmicznych. Planeta zimna, pustynna, z cienką warstwą atmosfery.</h3>
+					</div>
+					<div class="slide-content-desc">
+						<div class="slide-content-info">
+							<div class="slide-content-info-single">
+								<img src="img/circular-line-with-word-age-in-the-center.svg"/>
+								<h1>Wiek: <span>~4,603 mld lat</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/pi.svg"/>
+								<h1>Obwód: <span>21,296.9 km</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/cylinder.svg"/>
+								<h1>Objętość: <span>163,115,609,799 km3</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/kilograms.svg"/>
+								<h1>Masa: <span>6,39 E23 kg</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/surface.svg"/>
+								<h1>Powierzchnia: <span>144,371,391 km2</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/space.svg"/>
+								<h1>Grawitacja: <span>3.71 m/s2</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/speedometer.svg"/>
+								<h1>Prędkość ucieczki: <span>18,108 km/h</span></h1>
+							</div>
+						</div>
+						<div class="slide-content-chart">
+							<h1>Skład atmosfery</h1>
+							<canvas id="mars-chart"></canvas>
+						</div>	
+					</div>
+					</div>
     </section>
     <section class="slide" id="slide6">
 			<div class="planets-background slide6" />
-      <div data-aos="fade-down" data-aos-duration="2000" class="slide-content">
-        <div class="header-title">
-          <h1>Jowisz</h1>
-        </div>
-        <p class="slide-info">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-        </p>
-      </div>
+			<div data-aos="fade-down" data-aos-duration="2000" class="slide-content">
+					<div class="slide-title">
+						<h1>Jowisz</h1>
+						<h3>Największa z planet Układu Słonecznego. Jego masa jest dwukrotnie większa od sumy mas pozostałych planet.</h3>
+					</div>
+					<div class="slide-content-desc">
+						<div class="slide-content-chart">
+							<h1>Skład atmosfery</h1>
+							<canvas id="jupiter-chart"></canvas>
+						</div>
+						<div class="slide-content-info">
+							<div class="slide-content-info-single">
+								<img src="img/circular-line-with-word-age-in-the-center.svg"/>
+								<h1>Wiek: <span>~4.5 mld lat</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/pi.svg"/>
+								<h1>Obwód: <span>439,263.8 km</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/cylinder.svg"/>
+								<h1>Objętość: <span>1,431,281,810,739,360 km3</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/kilograms.svg"/>
+								<h1>Masa: <span>1,898 E27 kg</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/surface.svg"/>
+								<h1>Powierzchnia: <span>61,418,738,571 km2</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/space.svg"/>
+								<h1>Grawitacja: <span>24.79 m/s2</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/speedometer.svg"/>
+								<h1>Prędkość ucieczki: <span>216,720 km/h</span></h1>
+							</div>
+						</div>		
+					</div>
+					</div>
     </section>
     <section class="slide" id="slide7">
 			<div class="planets-background slide7" />
       <div data-aos="fade-down" data-aos-duration="2000" class="slide-content">
-        <div class="header-title">
-          <h1>Saturn</h1>
-        </div>
-        <p class="slide-info">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-        </p>
-      </div>
+					<div class="slide-title">
+						<h1>Saturn</h1>
+						<h3>Gazowy olbrzym otoczony tysiącami pierścieni, złożonych głównie z lodu i odłamków skalnych.</h3>
+					</div>
+					<div class="slide-content-desc">
+						<div class="slide-content-info">
+							<div class="slide-content-info-single">
+								<img src="img/circular-line-with-word-age-in-the-center.svg"/>
+								<h1>Wiek: <span>~4,503 mld lat</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/pi.svg"/>
+								<h1>Obwód: <span>365,882.4 km</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/cylinder.svg"/>
+								<h1>Objętość: <span>827,129,915,150,897 km3</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/kilograms.svg"/>
+								<h1>Masa: <span>5,683 E26 kg</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/surface.svg"/>
+								<h1>Powierzchnia: <span>42,612,133,285 km2</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/space.svg"/>
+								<h1>Grawitacja: <span>10.4 m/s2</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/speedometer.svg"/>
+								<h1>Prędkość ucieczki: <span>129,924 km/h</span></h1>
+							</div>
+						</div>
+						<div class="slide-content-chart">
+							<h1>Skład atmosfery</h1>
+							<canvas id="saturn-chart"></canvas>
+						</div>	
+					</div>
+					</div>
     </section>
     <section class="slide" id="slide8">
 			<div class="planets-background slide8" />
-      <div data-aos="fade-down" data-aos-duration="2000" class="slide-content">
-        <div class="header-title">
-          <h1>Uran</h1>
-        </div>
-        <p class="slide-info">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-        </p>
-      </div>
+			<div data-aos="fade-down" data-aos-duration="2000" class="slide-content">
+					<div class="slide-title">
+						<h1>Uran</h1>
+						<h3>Siódma planeta od Słońca, nazywany lodowym olbrzymem. Temperatura spada tam do -224 stopni Celcjusza.</h3>
+					</div>
+					<div class="slide-content-desc">
+						<div class="slide-content-chart">
+							<h1>Skład atmosfery</h1>
+							<canvas id="uranus-chart"></canvas>
+						</div>
+						<div class="slide-content-info">
+							<div class="slide-content-info-single">
+								<img src="img/circular-line-with-word-age-in-the-center.svg"/>
+								<h1>Wiek: <span>~4,503 mld lat</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/pi.svg"/>
+								<h1>Obwód: <span>159,354.1 km</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/cylinder.svg"/>
+								<h1>Objętość: <span>68,334,355,695,584 km3</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/kilograms.svg"/>
+								<h1>Masa: <span>8,681 E25 kg</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/surface.svg"/>
+								<h1>Powierzchnia: <span>8,083,079,690 km2</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/space.svg"/>
+								<h1>Grawitacja: <span>8.87 m/s2</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/speedometer.svg"/>
+								<h1>Prędkość ucieczki: <span>76,968 km/h</span></h1>
+							</div>
+						</div>		
+					</div>
+					</div>
     </section>
     <section class="slide" id="slide9">
 			<div class="planets-background slide9" />
-      <div data-aos="fade-down" data-aos-duration="2000" class="slide-content">
-        <div class="header-title">
-          <h1>Neptun</h1>
-        </div>
-        <p class="slide-info">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur amet dolore corrupti molestias optio? Voluptatem numquam temporibus dolor repudiandae, doloremque explicabo magnam dolorem labore perspiciatis, nulla dignissimos sapiente, ad porro.
-        </p>
-      </div>
-    </section>
+			<div data-aos="fade-down" data-aos-duration="2000" class="slide-content">
+					<div class="slide-title">
+						<h1>Neptun</h1>
+						<h3>Ostatnia z planet Układu Słonecznego, na której panują burze i naddźwiękowe wiatry, które osiągają prędkość nawet 2100 km/h.</h3>
+					</div>
+					<div class="slide-content-desc">
+						<div class="slide-content-info">
+							<div class="slide-content-info-single">
+								<img src="img/circular-line-with-word-age-in-the-center.svg"/>
+								<h1>Wiek: <span>~4,503 mld lat</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/pi.svg"/>
+								<h1>Obwód: <span>154,704.6 km</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/cylinder.svg"/>
+								<h1>Objętość: <span>62,525,703,987,421 km3</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/kilograms.svg"/>
+								<h1>Masa: <span>1,024 E26 kg</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/surface.svg"/>
+								<h1>Powierzchnia: <span>7,618,272,763 km2</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/space.svg"/>
+								<h1>Grawitacja: <span>11.15 m/s2</span></h1>
+							</div>
+							<div class="slide-content-info-single">
+								<img src="img/speedometer.svg"/>
+								<h1>Prędkość ucieczki: <span>84,816 km/h</span></h1>
+							</div>
+						</div>	
+						<div class="slide-content-chart">
+								<h1>Skład atmosfery</h1>
+								<canvas id="neptune-chart"></canvas>
+							</div>	
+					</div>
+					</div>
+		</section>
+		<div class="navigation-container">
+				<div class="progress-bar"></div>
+				<ul class="navigation">
+					<li id="scroll-slide1" class="scroll-item active">Intro</li>
+					<li id="scroll-slide2" class="scroll-item">Słońce</li>
+					<li id="scroll-slide3" class="scroll-item">Merkury</li>
+					<li id="scroll-slide4" class="scroll-item">Wenus</li>
+					<li id="scroll-slide5" class="scroll-item">Ziema</li>
+					<li id="scroll-slide6" class="scroll-item">Mars</li>
+					<li id="scroll-slide7" class="scroll-item">Jowisz</li>
+					<li id="scroll-slide8" class="scroll-item">Saturn</li>
+					<li id="scroll-slide9" class="scroll-item">Uran</li>
+					<li id="scroll-slide10" class="scroll-item">Neptun</li>
+				</ul>
+			</div>
     <script src="./js/scripts.js"></script>
     <script src="./js/parallax.js"></script>
+    <script src="./js/charts.js"></script>
     <script>
       AOS.init();
     </script>

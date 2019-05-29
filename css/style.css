@@ -9,12 +9,11 @@ html {
   overflow-x: hidden;
 }
 
-/* width */
 ::-webkit-scrollbar {
   width: 0px;
 }
 
-/*** HEADER ***/
+/*** LANDING PAGE ***/
 .container {
   width: 100%;
   height: 100vh;
@@ -99,7 +98,7 @@ html {
 .hero-image {
   width: 150px;
   height: 150px;
-  background: url("../img/sun.svg");
+  background: url("../img/sun1.svg");
   background-size: cover;
   animation: slide-in-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
@@ -121,6 +120,7 @@ html {
     opacity: 1;
   }
 }
+
 
 .orbit1 {
   width: 200px;
@@ -165,74 +165,73 @@ html {
 /*** PLANETS ***/
 
 .planets {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   z-index: 5;
 }
 
 .planet1 {
-  margin: 15px 0 0 15px;
+  width: 15px;
+  height: 15px;
+  margin: 21px 0 0 21px;
   animation: rotating 8s linear infinite;  
-  transform-origin: 85px 85px;
+  transform-origin: 78px 78px;
 }
 
 .planet2 {
-  margin: 28px 0 0 28px;
-  animation: reverse-rotating 9s linear infinite;
-  transform-origin: 120px 120px;
+  width: 20px;
+  height: 20px;
+  margin: 33px 0 0 33px;
+  animation: rotating 9s linear infinite;
+  transform-origin: 115px 115px;
 }
 
 .planet3 {
-  margin: 41px 0 0 41px;
+  width: 25px;
+  height: 25px;
+  margin: 45px 0 0 45px;
   animation: rotating 10s linear infinite;
-  transform-origin: 157px 157px;
+  transform-origin: 153px 153px;
 }
 
 .planet4 {
-  margin: 56px 0 0 56px;
-  animation: reverse-rotating 11s linear infinite;
-  transform-origin: 191px 191px;
+  width: 17px;
+  height: 17px;
+  margin: 63px 0 0 63px;
+  animation: rotating 11s linear infinite;
+  transform-origin: 185px 185px;
 }
 
 .planet5 {
-  margin: 70px 0 0 70px;
+  width: 55px;
+  height: 55px;
+  margin: 60px 0 0 60px;
   animation: rotating 12s linear infinite;
-  transform-origin: 227px 227px;
+  transform-origin: 237px 237px;
 }
 
 .planet6 {
-  margin: 87px 0 0 87px;
-  animation: reverse-rotating 13s linear infinite;
-  transform-origin: 262px 262px;
+  width: 50px;
+  height: 50px;
+  margin: 73px 0 0 73px;
+  animation: rotating 13s linear infinite;
+  transform-origin: 273px 273px;
 }
 
 .planet7 {
-  margin: 100px 0 0 100px;
+  width: 35px;
+  height: 35px;
+  margin: 97px 0 0 97px;
   animation: rotating 14s linear infinite;
-  transform-origin: 297px 297px;
+  transform-origin: 302px 302px;
 }
 
 .planet8 {
-  margin: 115px 0 0 115px;
-  animation: reverse-rotating 15s linear infinite;
-  transform-origin: 333px 333px;
-}
-
-@keyframes reverse-rotating {
-  from {
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-  to {
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
+  width: 35px;
+  height: 35px;
+  margin: 111px 0 0 111px;
+  animation: rotating 15s linear infinite;
+  transform-origin: 336px 336px;
 }
 
 @keyframes rotating {
@@ -253,7 +252,6 @@ html {
 }
 
 /*** NAVIGATION ***/
-
 .navigation-container {
   position: fixed;
   top: 50%;
@@ -273,7 +271,6 @@ html {
   }
 }
 
-
 .progress-bar {
   position: absolute;
   right: 0;
@@ -286,17 +283,12 @@ html {
 .navigation {
   list-style: none;
   color: #FFF;
-  font-size: 24px;
+  font-size: 20px;
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   line-height: 40px;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
-}
-
-.navigation li{
-  border-bottom: 2px solid rgba(255, 255, 255, 0.12);
-  padding: 5px 15px;
 }
 
 .navigation li:hover {
@@ -304,52 +296,45 @@ html {
   border-bottom: 2px solid #FFF;
 }
 
-@media only screen and (max-width: 1200px) {
-  .header-title h1 {
-    font-size: 65px;
-  }
+.scroll-item {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.12);
+  padding: 5px 15px;
+}
+
+.scroll-item.active {
+  border-bottom: 2px solid #FFF;
+  padding: 5px 15px;
 }
 
 @media only screen and (max-width: 768px) {
-  .header-title {
-    padding: 20px 10px 0 10px;
+  .progress-bar{
+    display: none;
   }
 
-  .header-title h1 {
-    font-size: 35px;
+  .navigation-container{
+    height: 100px;
+    width: 100vw;
+    margin: 0;
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
   }
-  
+
   .navigation {
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    line-height: 16px;
     font-size: 16px;
   }
 }
-
-
-
 /*** SECTIONS ***/
 .slide {
   height: 100vh;
   width: 100%;
   display: block;
-}
-
-.slide-info {
-  color: #FFF;
-  font-size: 20px;
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
-  padding: 0 300px;
-}
-
- @keyframes fade-in-top {
-  0% {
-    transform: translateY(-50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }
 
 .planets-background {
@@ -370,10 +355,10 @@ html {
 }
 
 .planets-background.slide1 {
-  background: url("../img/sun.svg");
+  background: url("../img/sun1.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 40%;
+  background-size: 45%;
   background-attachment: fixed;
 }
 
@@ -392,26 +377,26 @@ html {
   background: url("../img/mercury.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 40%;
+  background-size: 45%;
   background-attachment: fixed;
 }
 
 #slide3 {
-  background: rgba(255,122,5,1);
-  background: -moz-radial-gradient(center, ellipse cover, rgba(255,122,5,1) 0%, rgba(219,102,0,1) 44%, rgba(194,91,0,1) 100%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255,122,5,1)), color-stop(44%, rgba(219,102,0,1)), color-stop(100%, rgba(194,91,0,1)));
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(255,122,5,1) 0%, rgba(219,102,0,1) 44%, rgba(194,91,0,1) 100%);
-  background: -o-radial-gradient(center, ellipse cover, rgba(255,122,5,1) 0%, rgba(219,102,0,1) 44%, rgba(194,91,0,1) 100%);
-  background: -ms-radial-gradient(center, ellipse cover, rgba(255,122,5,1) 0%, rgba(219,102,0,1) 44%, rgba(194,91,0,1) 100%);
-  background: radial-gradient(ellipse at center, rgba(255,122,5,1) 0%, rgba(219,102,0,1) 44%, rgba(194,91,0,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7a05', endColorstr='#c25b00', GradientType=1 );
+  background: rgba(235,88,47,1);
+  background: -moz-radial-gradient(center, ellipse cover, rgba(235,88,47,1) 0%, rgba(235,75,35,1) 44%, rgba(171,55,25,1) 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(235,88,47,1)), color-stop(44%, rgba(235,75,35,1)), color-stop(100%, rgba(171,55,25,1)));
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(235,88,47,1) 0%, rgba(235,75,35,1) 44%, rgba(171,55,25,1) 100%);
+  background: -o-radial-gradient(center, ellipse cover, rgba(235,88,47,1) 0%, rgba(235,75,35,1) 44%, rgba(171,55,25,1) 100%);
+  background: -ms-radial-gradient(center, ellipse cover, rgba(235,88,47,1) 0%, rgba(235,75,35,1) 44%, rgba(171,55,25,1) 100%);
+  background: radial-gradient(ellipse at center, rgba(235,88,47,1) 0%, rgba(235,75,35,1) 44%, rgba(171,55,25,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb582f', endColorstr='#ab3719', GradientType=1 );
 }
 
 .planets-background.slide3 {
   background: url("../img/venus.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 40%;
+  background-size: 45%;
   background-attachment: fixed;
 }
 
@@ -430,7 +415,7 @@ html {
   background: url("../img/earth.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 40%;
+  background-size: 45%;
   background-attachment: fixed;
 }
 
@@ -449,64 +434,64 @@ html {
   background: url("../img/mars.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 40%;
+  background-size: 45%;
   background-attachment: fixed;
 }
 
 #slide6 {
-  background: rgba(207,128,0,1);
-  background: -moz-radial-gradient(center, ellipse cover, rgba(207,128,0,1) 0%, rgba(204,133,2,1) 44%, rgba(166,103,2,1) 100%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(207,128,0,1)), color-stop(44%, rgba(204,133,2,1)), color-stop(100%, rgba(166,103,2,1)));
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(207,128,0,1) 0%, rgba(204,133,2,1) 44%, rgba(166,103,2,1) 100%);
-  background: -o-radial-gradient(center, ellipse cover, rgba(207,128,0,1) 0%, rgba(204,133,2,1) 44%, rgba(166,103,2,1) 100%);
-  background: -ms-radial-gradient(center, ellipse cover, rgba(207,128,0,1) 0%, rgba(204,133,2,1) 44%, rgba(166,103,2,1) 100%);
-  background: radial-gradient(ellipse at center, rgba(207,128,0,1) 0%, rgba(204,133,2,1) 44%, rgba(166,103,2,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cf8000', endColorstr='#a66702', GradientType=1 );
+  background: rgba(236,149,49,1);
+  background: -moz-radial-gradient(center, ellipse cover, rgba(236,149,49,1) 0%, rgba(209,133,46,1) 44%, rgba(176,113,41,1) 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(236,149,49,1)), color-stop(44%, rgba(209,133,46,1)), color-stop(100%, rgba(176,113,41,1)));
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(236,149,49,1) 0%, rgba(209,133,46,1) 44%, rgba(176,113,41,1) 100%);
+  background: -o-radial-gradient(center, ellipse cover, rgba(236,149,49,1) 0%, rgba(209,133,46,1) 44%, rgba(176,113,41,1) 100%);
+  background: -ms-radial-gradient(center, ellipse cover, rgba(236,149,49,1) 0%, rgba(209,133,46,1) 44%, rgba(176,113,41,1) 100%);
+  background: radial-gradient(ellipse at center, rgba(236,149,49,1) 0%, rgba(209,133,46,1) 44%, rgba(176,113,41,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec9531', endColorstr='#b07129', GradientType=1 );
 }
 
 .planets-background.slide6 {
   background: url("../img/jupiter.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 40%;
+  background-size: 45%;
   background-attachment: fixed;
 }
 
 #slide7 {
-  background: rgba(207,166,0,1);
-  background: -moz-radial-gradient(center, ellipse cover, rgba(207,166,0,1) 0%, rgba(204,170,2,1) 44%, rgba(166,133,3,1) 100%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(207,166,0,1)), color-stop(44%, rgba(204,170,2,1)), color-stop(100%, rgba(166,133,3,1)));
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(207,166,0,1) 0%, rgba(204,170,2,1) 44%, rgba(166,133,3,1) 100%);
-  background: -o-radial-gradient(center, ellipse cover, rgba(207,166,0,1) 0%, rgba(204,170,2,1) 44%, rgba(166,133,3,1) 100%);
-  background: -ms-radial-gradient(center, ellipse cover, rgba(207,166,0,1) 0%, rgba(204,170,2,1) 44%, rgba(166,133,3,1) 100%);
-  background: radial-gradient(ellipse at center, rgba(207,166,0,1) 0%, rgba(204,170,2,1) 44%, rgba(166,133,3,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfa600', endColorstr='#a68503', GradientType=1 );
+  background: rgba(248,179,94,1);
+  background: -moz-radial-gradient(center, ellipse cover, rgba(248,179,94,1) 0%, rgba(217,156,83,1) 44%, rgba(161,117,63,1) 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(248,179,94,1)), color-stop(44%, rgba(217,156,83,1)), color-stop(100%, rgba(161,117,63,1)));
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(248,179,94,1) 0%, rgba(217,156,83,1) 44%, rgba(161,117,63,1) 100%);
+  background: -o-radial-gradient(center, ellipse cover, rgba(248,179,94,1) 0%, rgba(217,156,83,1) 44%, rgba(161,117,63,1) 100%);
+  background: -ms-radial-gradient(center, ellipse cover, rgba(248,179,94,1) 0%, rgba(217,156,83,1) 44%, rgba(161,117,63,1) 100%);
+  background: radial-gradient(ellipse at center, rgba(248,179,94,1) 0%, rgba(217,156,83,1) 44%, rgba(161,117,63,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8b35e', endColorstr='#a1753f', GradientType=1 );
 }
 
 .planets-background.slide7 {
   background: url("../img/saturn.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 44.5%;
+  background-size: 50%;
   background-attachment: fixed;
 }
 
 #slide8 {
-  background: rgba(0,101,224,1);
-  background: -moz-radial-gradient(center, ellipse cover, rgba(0,101,224,1) 0%, rgba(0,93,199,1) 44%, rgba(0,63,135,1) 100%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(0,101,224,1)), color-stop(44%, rgba(0,93,199,1)), color-stop(100%, rgba(0,63,135,1)));
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(0,101,224,1) 0%, rgba(0,93,199,1) 44%, rgba(0,63,135,1) 100%);
-  background: -o-radial-gradient(center, ellipse cover, rgba(0,101,224,1) 0%, rgba(0,93,199,1) 44%, rgba(0,63,135,1) 100%);
-  background: -ms-radial-gradient(center, ellipse cover, rgba(0,101,224,1) 0%, rgba(0,93,199,1) 44%, rgba(0,63,135,1) 100%);
-  background: radial-gradient(ellipse at center, rgba(0,101,224,1) 0%, rgba(0,93,199,1) 44%, rgba(0,63,135,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0065e0', endColorstr='#003f87', GradientType=1 );
+  background: rgba(100,198,209,1);
+  background: -moz-radial-gradient(center, ellipse cover, rgba(100,198,209,1) 0%, rgba(50,150,237,1) 44%, rgba(44,135,215,1) 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(100,198,209,1)), color-stop(44%, rgba(50,150,237,1)), color-stop(100%, rgba(44,135,215,1)));
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(100,198,209,1) 0%, rgba(50,150,237,1) 44%, rgba(44,135,215,1) 100%);
+  background: -o-radial-gradient(center, ellipse cover, rgba(100,198,209,1) 0%, rgba(50,150,237,1) 44%, rgba(44,135,215,1) 100%);
+  background: -ms-radial-gradient(center, ellipse cover, rgba(100,198,209,1) 0%, rgba(50,150,237,1) 44%, rgba(44,135,215,1) 100%);
+  background: radial-gradient(ellipse at center, rgba(100,198,209,1) 0%, rgba(50,150,237,1) 44%, rgba(44,135,215,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#64c6d1', endColorstr='#2c87d7', GradientType=1 );
 }
 
 .planets-background.slide8 {
   background: url("../img/uranus.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 40%;
+  background-size: 45%;
   background-attachment: fixed;
 }
 
@@ -525,6 +510,194 @@ html {
   background: url("../img/neptune.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 40%;
+  background-size: 45%;
   background-attachment: fixed;
+}
+
+@media only screen and (max-width: 1200px) {
+  .planets-background.slide1 {
+    background-size: 60%;
+  }
+  .planets-background.slide2 {
+    background-size: 60%;
+  }
+  .planets-background.slide3 {
+    background-size: 60%;
+  }
+  .planets-background.slide4 {
+    background-size: 60%;
+  }
+  .planets-background.slide5 {
+    background-size: 60%;
+  }
+  .planets-background.slide6 {
+    background-size: 60%;
+  }
+  .planets-background.slide7 {
+    background-size: 60%;
+  }
+  .planets-background.slide8 {
+    background-size: 60%;
+  }
+  .planets-background.slide9 {
+    background-size: 60%;
+  }
+}
+
+/*** SLIDES CONTENT ***/
+.slide-title{
+	display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.slide-title h1 {
+  width: 100%;
+	padding: 20px 0 0 0;
+	font-weight: 400;
+	font-family: 'Lobster', cursive;
+	font-size: 90px;
+	color: #FFF;
+	text-align: center;
+}
+
+.slide-title h3 {
+  width: 100%;
+  padding: 0 20% 20px 20%;
+	font-weight: 500;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 30px;
+	color: #FFF;
+	text-align: center;
+}
+
+.slide-content{
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.slide-content-desc{
+  margin: 20px 0 0 0;
+  padding: 50px;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.7);
+  border-radius: 20px;
+}
+
+
+.slide-content-chart {
+	position: relative; 
+	width: 30vw;
+	display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.slide-content-chart h1{
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5em;
+  font-weight: 800;
+  padding: 0 0 30px 0;
+  text-transform: uppercase;
+}
+
+.slide-content-info {
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 4em;
+}
+
+.slide-content-info-single {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.slide-content-info-single img{
+  width: 40px;
+}
+
+.slide-content-info-single h1 {
+  text-transform: uppercase;
+  font-size: 30px;
+  padding: 0 0 0 20px;
+}
+
+.slide-content-info-single h1 span {
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .slide-content-desc{
+    margin:0;
+    padding: 20px;
+  }
+
+  .slide-title h1 {
+    font-size: 60px;
+  }
+  
+  .slide-title h3 {
+    font-size: 20px;
+  }
+
+  .slide-content-chart {
+    width: 40vw;
+  }
+  
+  .slide-content-chart h1{
+    font-size: 1.5em;
+  }
+
+  .slide-content-info-single h1 {
+    font-size: 20px;
+  }
+  
+  .slide-content-info-single h1 span {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .slide-content-desc{
+    margin:0;
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  .slide-title h1 {
+    font-size: 40px;
+  }
+  
+  .slide-title h3 {
+    font-size: 16px;
+  }
+
+  .slide-content-chart {
+    width: 60vw;
+  }
+  
+  .slide-content-chart h1{
+    font-size: 1em;
+  }
+
+  .slide-content-info-single h1 {
+    font-size: 14px;
+  }
+  
+  .slide-content-info-single h1 span {
+    font-size: 10px;
+  }
+
+  .slide-content-info {
+    line-height: 2em;
+  }
 }
